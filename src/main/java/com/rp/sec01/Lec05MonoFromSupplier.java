@@ -20,10 +20,10 @@ public class Lec05MonoFromSupplier {
         );
 
         Callable<String> stringCallable = () -> getName();
-        Mono.fromCallable(stringCallable)
-                .subscribe(
-                        Util.onNext()
-                );
+        Mono<String> mono2 = Mono.fromCallable(stringCallable);
+        mono2.subscribe(
+                Util.onNext()
+        );
 
 
     }
